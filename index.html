@@ -1,0 +1,108 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="theme-color" content="#08298a">
+<title>RADIOSPOTENTE.COM</title>
+
+<link href="css/style.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="js/lunaradio-animado.js"></script>
+<style>
+html,body{font-family:"Open Sans",sans-serif;height:100%;margin:0;display:flex;flex-direction:column;color:#272829;}
+</style>
+</head>
+
+<body>
+<div style="height:100%">
+<button type="button" class="mobile-nav-toggle"><i class="fas fa-bars"></i></button>
+<header id="header">
+<nav class="nav-menu">
+<ul>
+<li><a target="_blank" href="https://play.google.com/store/apps/details?id=turadio"><i class="fab fa-google-play"></i> <span>Descarga nuestra APP</span></a></li>
+<li><a target="_blank" href="https://api.whatsapp.com/send?phone=51997090221&text=Hola, quisiera saber precios sobre la publicidad "><i class="fas fa-bullhorn"></i><span>Publicidad</span></a></li>
+<li><a target="_blank" href="https://web.facebook.com/RadioPotentePeru/"><i class="fab fa-facebook-square" alt="Facebook"></i>
+<span>Facebook</span></a></li>
+<li><a target="_blank" href="https://www.instagram.com/"><i class="fab fa-instagram-square" alt="Instagram"></i>
+<span>Instagram</span></a></li>
+<li><a href="https://api.whatsapp.com/send?phone=51997090221&text=Hola escucho la radio" target="_blank"><i class="fab fa-whatsapp-square" alt="Whatsapp"></i>
+<span>Whatsapp</span></a></li>
+<li><a target="_blank" href="https://www.tiktok.com/es/"><i class="fab fa-tiktok"></i><span>tiktok</span></a></li>
+</ul>
+</nav>
+</header>
+
+
+<div id="player"></div>
+<script>
+$("#player").lunaradio({
+    userinterface: "big", 
+    backgroundcolor: "rgba(9,15,25,0.8)",
+    fontcolor: "#ffffff",
+    hightlightcolor: "#ffffff", // Cambiado a blanco para mejor visibilidad
+    fontname: "Saira Condensed", 
+    googlefont: "Saira+Condensed:wght@100", 
+    fontratio: "0.4", 
+    radioname: "RADIOSPOTENTE.COM", 
+    scroll: "true", 
+    coverimage: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhO6u5Z2nrMQIVmwQ3gejhrK-fldPeW_w3-Tu8NCMeyN6VIoaWoovnqhgkvdvfL9R5Vfzgq4KA9YXQtzMMP3ctqD1Tlium6ToCMwt5esOOdrATpFSbTo2APTE21UHsdcMXCi3fyZsGT4MY88yhexr99TMVADxAQ9qwAJB7iV5kBYvKGnYXaFBD-hNg4Xtc/s194/images%20%281%29.png",
+    onlycoverimage: "false",
+    coverstyle: "animated",
+    usevisualizer: "real", 
+    visualizertype: "2", 
+    itunestoken: "1000lIPN", 
+    
+    // --- CAMBIOS PARA EL NUEVO SERVIDOR ---
+    metadatatechnic: "icecast", // Cambiado de fallback a icecast
+    streamurl: "http://hoth.alonhosting.com:4040",
+    streamtype: "icecast2", 
+    icecastmountpoint: "/stream", 
+    // --------------------------------------
+
+    corsproxy: "", // Si los metadatos no aparecen, podrías necesitar un proxy CORS
+    usestreamcorsproxy: "false",
+    shoutcastpath: "",
+    shoutcastid: "1", 
+    metadatainterval: "20000", 
+    volume: "100",
+    debug: "false",
+    autoplay: "true",
+    displayliveicon: "true",
+    visualizeropacity: "1.0",
+    multicolorvisualizer: "true",
+    color1: "#00FF00",
+    color2: "#ffff00",
+    color3: "#FF1F6F",
+    color4: "#FF1F6F",
+});
+</script>
+
+
+<div class="background_hora"><div id="relogio">15:00:05</div></div>
+<script>
+function reloj() {
+let elementoID = document.getElementById('relogio');
+let horalocal = new Date().toLocaleTimeString('es');
+elementoID.innerHTML = horalocal;
+}
+setInterval(reloj, 1000);
+</script>
+</div>
+
+
+<footer style="display:grid;align-content:end">
+<div style="background-color:#222;color:#fff;text-align:center;padding:10px"> 
+&copy; Copyright 2025 - <a href="http://www.google.com">TU RADIO POR INTERNET CONTACTANOS: +51997090221</a> 
+</div>
+</footer>
+
+<script>
+$(".mobile-nav-toggle").click(function(){
+$("body").toggleClass("mobile-nav-active");
+$(".mobile-nav-toggle i").toggleClass("fa-bars fa-times");
+});
+</script>
+</body>
+</html>
